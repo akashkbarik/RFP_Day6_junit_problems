@@ -12,6 +12,8 @@ public class Junit_Programs {
         ConvertTemperature();
 //        monthly payment call
         System.out.println("monthly payment is : " + Monthly_Payment());
+//        sqrt call
+        System.out.println("square root is " + sqrt());
     }
 
     public static class vending_machine {
@@ -79,5 +81,18 @@ public class Junit_Programs {
         double r = R / (12 * 100);
         double payment = p * r / (1 - Math.pow((1 + r), -n));
         return payment;
+    }
+
+    //    sqrt code
+    public static double sqrt() {
+        System.out.println("this is sqrt program\n...................................");
+        System.out.println("enter no to find square root");
+        double c = sc.nextDouble();
+        double t = c;
+        double epsilon = 1e-15;
+        while (Math.abs(t - c / t) > epsilon * t) {
+            t = (c / t + t) / 2;
+        }
+        return t;
     }
 }
