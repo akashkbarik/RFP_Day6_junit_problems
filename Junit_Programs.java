@@ -8,6 +8,8 @@ public class Junit_Programs {
         vending_machine.notes();
 //        weekday call
         System.out.println("day is " + weekDay() + "th day of week");
+//        temperature call
+        ConvertTemperature();
     }
     public static class vending_machine {
         static int n, total;
@@ -44,5 +46,22 @@ public class Junit_Programs {
         int d0 = (d + x + (31 * m0) / 12) % 7;
         return d0;
 
+    }
+//    Temperature code
+    public static void ConvertTemperature(){
+        System.out.println("this is Temperature code\n......................");
+        System.out.println("enter temp in celsius or fahrenheit");
+        int tem = sc.nextInt();
+        char t = sc.next().charAt(0);
+        int convertor=0;
+        if (t == 'c' || t == 'C') {
+            convertor = (tem * 9 / 5) + 32;
+        System.out.println("converted temp is " + convertor+" F ");
+        } else if (t == 'f' || t == 'F') {
+            convertor = (tem - 32) * 5 / 9;
+            System.out.println("converted temp is " + convertor+" C ");
+        } else {
+            System.out.println("Enter correct input");
+        }
     }
 }
